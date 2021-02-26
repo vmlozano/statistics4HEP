@@ -4,12 +4,12 @@ Statistics4HEP is a simple bash-shell script that computes the statistical disco
 
 ### How to use it.
 
-The use of the script is very simple as it does not need any installation. 
+The use of the script is very simple as it does not need any installation. The procedure is as follows in the terminal:
 
 ~~~
-
-chmod 777
+chmod 777 statistics4HEP.sh
 
 ./statistics4HEP.sh
-
 ~~~
+
+
