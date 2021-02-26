@@ -13,11 +13,11 @@ chmod 777 statistics4HEP.sh
 ~~~
 
 The script will ask the user for the number of signal events:
-
-`Enter the number of signal events:` 
-
+~~~
+Enter the number of signal events:
+~~~
 Once the user introduces the signal events and press `enter` the script will ask for the number of background events.
-
-`Enter the number of background events:`
-
+~~~
+Enter the number of background events:
+~~~
 
