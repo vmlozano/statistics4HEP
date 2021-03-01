@@ -12,6 +12,16 @@ chmod 777 statistics4HEP.sh
 ./statistics4HEP.sh
 ~~~
 
+The script will ask the user which modality of significance is going to be used, with or without uncertainties in the background.
+
+~~~
+Select an option
+
+1: Significance without uncertainties.
+2: Significance with uncertainties.
+~~~
+
+
 The script will ask the user for the number of signal events:
 ~~~
 Enter the number of signal events:
