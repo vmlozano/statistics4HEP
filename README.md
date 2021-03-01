@@ -40,4 +40,4 @@ Once all the values are introduced the script will deliver the exclusion and dis
 
 An explanation of the equations used to calculate the exclusion and discovery signicances and also the approximations can be found in the statistical notes included in:
 
-https://github.com/vmlozano/statistics4HEP/notes/statistics_HEP.pdf
+https://github.com/vmlozano/statistics4HEP/blob/master/notes/statistics_HEP.pdf
