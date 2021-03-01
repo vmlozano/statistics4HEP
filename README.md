@@ -35,3 +35,9 @@ And in the case of option 2 where the significance contains uncertainties the sc
 ~~~
 Enter the value of the uncertainty:
 ~~~
+
+Once all the values are introduced the script will deliver the exclusion and discovery significance together with the approximations.
+
+An explanation of the equations used to calculate the exclusion and discovery signicances and also the approximations can be found in the statistical notes included in:
+
+https://github.com/vmlozano/statistics4HEP/notes/statistics_HEP.pdf
