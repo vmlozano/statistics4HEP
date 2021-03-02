@@ -72,8 +72,40 @@ significancedis(){
 
 ### Exclusion significance w uncertainties function:
 
-#significanceexcunc(){
-#}
+significanceexcunc(){
+   sumsb=$(echo "scale=6; $1+$2" | bc -l)
+   sumbsig=$(echo "scale=6; $2+$3*$3" | bc -l)
+   sqrtbsig=$(echo "scale=6; sqrt($sumbsig)" | bc -l)
+   sexcapp=$(echo "scale=6; $1/$sqrtbsig" | bc -l)
+   echo " *Exclusion significance*"
+   echo ""
+   echo " The approximated exclusion significance is: $sexcapp"
+#   echo " The exact exclusion significance is: $sexcexa"
+   echo ""
+   #Include the excluded if
+}
+
+### Discovery significance w uncertainties function:
+
+significancedisunc(){
+   sumsb=$(echo "scale=6; $1+$2" | bc -l)
+   sumbsig=$(echo "scale=6; $2+$3*$3" | bc -l)
+   numa=$(echo "scale=6; $sumsb*$sumbsig" | bc -l)
+   dena=$(echo "scale=6; $2*$2+$3*$3*$sumsb" | bc -l)
+   fterm=$(echo "scale=6; $sumsb*l($numa/$dena)" | bc -l)
+   boversigma=$(echo "scale=6; $2/$3" | bc -l)
+   numb=$(echo "scale=6; $1*$3*$3" | bc -l)
+   denb=$(echo "scale=6; $2*$sumbsig" | bc -l)
+   sterm=$(echo "scale=6; $boversigma*$boversigma*l(1+$numb/$denb)" | bc -l)
+   sdisexa=$(echo "scale=4; sqrt(2*($fterm - $sterm))" | bc -l)
+   sqrtbsig=$(echo "scale=6; sqrt($sumbsig)" | bc -l)
+   sdisapp=$(echo "scale=6; $1/$sqrtbsig" | bc -l)
+   echo " *Discovery significance*"
+   echo "   "
+   echo " The approximated discovery significance is: $sdisapp"
+   echo " The exact discovery significance is: $sdisexa"
+   echo ""
+}
 
 ### Calling the significance w/o uncertainties functions
 
@@ -126,7 +158,7 @@ read -p " Enter the number of background events: " int2
   fi
 echo ""
 read -p " Enter the value of the uncertainty: " int3
-  if [ "$int2" = "" ]; then
+  if [ "$int3" = "" ]; then
   echo " Please, enter a number."
   read -p " Enter the value of the uncertainty: " int3
     if [ "$int3" = "" ]; then
@@ -136,8 +168,8 @@ read -p " Enter the value of the uncertainty: " int3
 echo ""
 echo " ***RESULTS***"
 echo ""
-significanceexc $int1 $int2
-significancedis $int1 $int2
+significanceexcunc $int1 $int2 $int3
+significancedisunc $int1 $int2 $int3
 }
 
 callc3p0(){
